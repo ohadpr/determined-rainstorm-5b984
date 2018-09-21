@@ -1,0 +1,11 @@
+<div class="inner">
+    <header class="major special alt">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.subtitle | newline_to_br }}</p>
+    </header>
+    {% if section.home_button %}
+    <ul class="actions special">
+        <li><a href="{{ section.home_button.link }}" class="button primary wide">{{ section.home_button.text }}</a></li>
+    </ul>
+    {% endif %}
+</div>

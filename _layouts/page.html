@@ -1,0 +1,23 @@
+---
+layout: body
+---
+
+<!-- Section -->
+<section class="wrapper style1">
+    <div class="inner">
+        <header class="major special">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.subtitle | newline_to_br }}</p>
+        </header>
+        {% if page.img_path %}
+        <div class="image main"><img src="{{ page.img_path | relative_url }}" alt="" /></div>
+        {% endif %}
+        {% assign sections = content | split: '<!--section-->' %}
+        {% for paragraph in sections %}
+            {{ paragraph | markdownify }}
+            {% unless forloop.last %}
+                <hr class="major" />
+            {% endunless %}
+        {% endfor %}
+    </div>
+</section>

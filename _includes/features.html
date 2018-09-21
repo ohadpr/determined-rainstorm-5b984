@@ -1,0 +1,29 @@
+<div class="inner">
+    <header class="major special">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.subtitle | newline_to_br }}</p>
+    </header>
+    <div class="features">
+        <ul>
+            {% for entry in section.features.left_section %}
+            <li>
+                <span class="icon alt major {{ entry.icon }}"></span>
+                <h3>{{ entry.title }}</h3>
+                <p>{{ entry.text }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        {% if section.features.img_path %}
+        <span class="image"><img src="{{ section.features.img_path | relative_url }}" alt="" /></span>
+        {% endif %}
+        <ul>
+            {% for entry in section.features.right_section %}
+            <li>
+                <span class="icon alt major {{ entry.icon }}"></span>
+                <h3>{{ entry.title }}</h3>
+                <p>{{ entry.text }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

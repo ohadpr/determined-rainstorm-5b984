@@ -1,0 +1,12 @@
+<section id="banner">
+    <div class="content">
+        <header class="major special">
+            <h1>{{ site.banner.title | newline_to_br }}</h1>
+        </header>
+        {% if site.banner.home_button %}
+        <ul class="actions special">
+            <li><a href="{{ site.banner.home_button.link }}" class="button primary wide scrolly">{{ site.banner.home_button.text }}</a></li>
+        </ul>
+        {% endif %}
+    </div>
+</section>

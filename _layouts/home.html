@@ -1,0 +1,13 @@
+---
+layout: body
+---
+
+{% include banner.html %}
+
+{% for section in page.sections %}
+    <!-- Section -->
+    <section class="wrapper {% cycle 'style1', 'style2 alt' %}" {% if section.section_id %}id="{{ section.section_id }}"{% endif %}>
+        
+        {% include {{ section.component }} %}
+    </section>
+{% endfor %}
